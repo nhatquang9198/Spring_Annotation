@@ -14,6 +14,7 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -33,6 +34,7 @@ public class Person {
 	private List<Info> info;
 
 	@Bean(name = "person")
+	@Scope("prototype")
 	public Person getPerson() {
 		return new Person();
 	}

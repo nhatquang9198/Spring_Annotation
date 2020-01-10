@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -27,6 +28,7 @@ public class Info {
 	private Person person;
 
 	@Bean(name = "info")
+	@Scope("prototype")
 	public Info getBelonging() {
 		return new Info();
 	}
